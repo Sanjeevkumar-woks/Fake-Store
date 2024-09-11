@@ -12,7 +12,7 @@ const Card = ({ product }) => {
   const { title, price, description, category, image, rating } = product;
 
   return (
-    <div className="card flex flex-col gap-2 justify-center items-center p-5 bg-white border-2 border-gray-200 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:border-blue-300 duration-300 ease-in-out">
+    <div className="card flex flex-col gap-2 justify-center items-center p-5 bg-white border-2 border-gray-200 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl  duration-300 ease-in-out">
       <img
         className="card-image w-54 h-64 object-cover rounded-lg mb-4 hover:scale-125 transition-transform duration-300 ease-in-out mix-blend-multiply"
         src={image}
