@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CartContainer from "./CartContainer";
+import { CartContext } from "../App";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState(false);
+
+  const { cart } = useContext(CartContext);
 
   return (
     <header className="header flex justify-between items-center p-5 bg-white shadow-md relative">
@@ -38,7 +41,7 @@ const Header = () => {
           className="bg-orange-800 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 ease-in-out"
           onClick={() => setOpen((prev) => !prev)}
         >
-          Cart
+          Cart ({cart.length})
         </button>
         <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 ease-in-out">
           Log-in

@@ -9,7 +9,7 @@ const CategoryBar = () => {
           Women's
         </li>
         <li className="hover:text-blue-600 transition-colors duration-300 ease-in-out cursor-pointer">
-          Kids'
+          Kids
         </li>
         <li className="hover:text-blue-600 transition-colors duration-300 ease-in-out cursor-pointer">
           All
