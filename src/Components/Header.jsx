@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import CartContainer from "./CartContainer";
+import { Link } from "react-router-dom";
 import { CartContext } from "../App";
 
 const Header = () => {
@@ -19,19 +20,19 @@ const Header = () => {
       <nav className="hidden md:flex gap-6 text-lg sm:hidden">
         <ul className="flex gap-6 list-none">
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-            Category
+            <Link to="/category">Category</Link>
           </li>
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-            About
+            <Link to="/about">About</Link>
           </li>
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-            Contact
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-            Services
+            <Link to="/services">Services</Link>
           </li>
         </ul>
       </nav>
@@ -71,19 +72,19 @@ const Header = () => {
 
           <ul className="fixed top-0 right-0 h-content w-56 bg-white shadow-lg z-50">
             <li className="p-4 hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-              Home
+              <Link to="/">Home</Link>
             </li>
             <li className="p-4 hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-              Category
+              <Link to="/category">Category</Link>
             </li>
             <li className="p-4 hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-              About
+              <Link to="/about">About</Link>
             </li>
             <li className="p-4 hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-              Contact
+              <Link to="/contact">Contact</Link>
             </li>
             <li className="p-4 hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-              Services
+              <Link to="/services">Services</Link>
             </li>
           </ul>
         </>

@@ -1,56 +1,36 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import ProductsList from "./ProductsList";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import CategoryBar from "./Components/CategoryBar";
-import Loader from "./Components/Loader";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createContext, useState } from "react";
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/ContactUs";
+import NotFoundPage from "./pages/NotFound";
+import ProductDetails from "./Components/ProductDetails";
+import ServicesPage from "./pages/ServicePage";
 
 export const CartContext = createContext();
 
 export default function App() {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState("All");
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setFilteredProducts(data);
-        setLoading(false);
-      });
-  }, []);
-
-  // filter products based on category
-  useEffect(() => {
-    if (category === "All") {
-      setFilteredProducts(products);
-      return;
-    }
-    setFilteredProducts(
-      products.filter((product) => product.category === category)
-    );
-  }, [category]);
-
   return (
-    <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <CartContext.Provider value={{ cart, setCart, category, setCategory }}>
-          <div className="relative">
-            <Header />
-            <div className="z-10">
-              <CategoryBar />
-              <ProductsList products={filteredProducts} />
-              <Footer />
-            </div>
-          </div>
-        </CartContext.Provider>
-      )}
-    </>
+    <CartContext.Provider value={{ cart, setCart, category, setCategory }}>
+      <Router>
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </CartContext.Provider>
   );
 }
