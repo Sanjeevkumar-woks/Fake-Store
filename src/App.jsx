@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createContext, useState } from "react";
 import HomePage from "./pages/HomePage";
-import Header from "./components/Header";
+
 import Footer from "./components/Footer";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/ContactUs";
 import NotFoundPage from "./pages/NotFound";
 import ProductDetails from "./Components/ProductDetails";
 import ServicesPage from "./pages/ServicePage";
+import Header from "./components/Header";
 
 export const CartContext = createContext();
 
