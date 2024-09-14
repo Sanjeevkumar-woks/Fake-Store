@@ -3,7 +3,7 @@ import CartContainer from "./CartContainer";
 import { Link } from "react-router-dom";
 import { CartContext } from "../App";
 
-const Header = () => {
+const Headers = () => {
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState(false);
 
@@ -93,4 +93,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Headers;

@@ -6,8 +6,8 @@ import ContactPage from "./pages/ContactUs";
 import NotFoundPage from "./pages/NotFound";
 import ProductDetails from "./Components/ProductDetails";
 import ServicesPage from "./pages/ServicePage";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Headers from "./Components/Header";
+import Footer from "./Components/Footer";
 
 export const CartContext = createContext();
 
@@ -18,7 +18,7 @@ export default function App() {
   return (
     <CartContext.Provider value={{ cart, setCart, category, setCategory }}>
       <Router>
-        <Header />
+        <Headers />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
