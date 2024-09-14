@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import CategoryBar from "../components/CategoryBar";
 import { CartContext } from "../App";
+import CategoryBar from "../Components/CategoryBar";
 import ProductsList from "../Components/ProductsList";
 import Loader from "../Components/Loader";
 
