@@ -4,11 +4,12 @@ import { CartContext } from "../App";
 const CategoryBar = () => {
   const { category, setCategory } = useContext(CartContext);
 
+  //handle category
   const handleCategory = (category) => {
     setCategory(category);
   };
   return (
-    <div className="category-bar bg-gray-100  m-2 shadow-md">
+    <div className="category-bar bg-gray-100  m-2 p-2 shadow-md">
       <ul className="flex justify-center gap-4 md:gap-8 text-lg font-semibold">
         <li
           className="hover:text-blue-600 transition-colors duration-300 ease-in-out cursor-pointer"

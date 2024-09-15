@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
-
 import Footer from "./components/Footer";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/ContactUs";
@@ -9,6 +8,10 @@ import NotFoundPage from "./pages/NotFound";
 import ProductDetails from "./Components/ProductDetails";
 import ServicesPage from "./pages/ServicePage";
 import Header from "./components/Header";
+import Cart from "./Components/Cart";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ReturnPolicy from "./pages/ReturnPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 export const CartContext = createContext();
 
@@ -22,11 +25,19 @@ export default function App() {
         <Header />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route exact path="/" element={<HomePage />} />
+
+            <Route exact path="/product/:id" element={<ProductDetails />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/ReturnPolicy" element={<ReturnPolicy />} />
+            <Route
+              path="/TermsAndConditions"
+              element={<TermsAndConditions />}
+            />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

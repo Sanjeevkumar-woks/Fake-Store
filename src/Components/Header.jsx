@@ -1,24 +1,29 @@
 import { useContext, useState } from "react";
 import CartContainer from "./CartContainer";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { CartContext } from "../App";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate();
 
   const { cart } = useContext(CartContext);
 
   return (
     <header className="header flex justify-between items-center p-5 bg-white shadow-md relative">
       {/* LOGO */}
-      <p className="text-3xl font-bold text-blue-600">
-        <span className="text-red-600">Fake</span>-Store
-      </p>
+      <div onClick={() => navigate("/")}>
+        <p className="text-3xl font-bold text-blue-600 cursor-pointer">
+          <span className="text-red-600">Fake</span>-Store
+        </p>
+      </div>
 
       {/* Nav-links */}
       <nav className="hidden md:flex gap-6 text-lg sm:hidden">
-        <ul className="flex gap-6 list-none">
+        <ul className="flex gap-6 list-none font-semibold">
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
             <Link to="/">Home</Link>
           </li>
@@ -32,19 +37,32 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="hover:text-red-600 hover:underline transition-colors duration-300 ease-in-out cursor-pointer">
-            <Link to="/services">Services</Link>
+            <Link to="/cart">Cart</Link>
           </li>
         </ul>
       </nav>
+
+      <div className={`${showSearch ? "block" : "hidden"} p-2 `}>
+        <input type="text" placeholder="Search" className="p-2 " />
+      </div>
       {/* buttons */}
-      <div className="flex gap-4">
-        <button
-          className="bg-orange-800 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 ease-in-out"
-          onClick={() => setOpen((prev) => !prev)}
+      <div className="flex gap-2">
+        {/* <button
+          className=" text-gray-600  rounded-lg hover:bg-orange-600 transition-colors duration-300 ease-in-out p-2"
+          onClick={() => setShowSearch((prev) => !prev)}
         >
-          Cart ({cart.length})
+          🔍
+        </button> */}
+        <button
+          className=" text-gray-600  rounded-lg hover:bg-orange-600 transition-colors duration-300 ease-in-out p-2"
+          onClick={() => navigate("/cart")}
+        >
+          🛒{" "}
+          <sup className="bg-orange-600 text-white p-1 rounded-xl">
+            ({cart.length})
+          </sup>
         </button>
-        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 ease-in-out">
+        <button className=" bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 ease-in-out">
           Log-in
         </button>
       </div>
@@ -63,6 +81,7 @@ const Header = () => {
         </button>
       </div>
 
+      {/* mobile menu */}
       {menu && (
         <>
           <div

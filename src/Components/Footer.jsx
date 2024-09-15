@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="footer flex flex-col justify-center items-center  bg-black shadow-md">
@@ -14,32 +16,35 @@ const Footer = () => {
           </article>
         </div>
 
+        {/* Nav-links */}
         <div className="flex ">
           <ul className="flex flex-col gap-6 list-none">
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              Home
+              <Link to="/">Home</Link>
             </li>
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              Category
+              <Link to="/category">Category</Link>
             </li>
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              About
+              <Link to="/about">About</Link>
             </li>
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              Contact
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
+
+        {/* Nav-links terms and conditions */}
         <div className="flex ">
           <ul className="flex flex-col gap-6 list-none">
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              Services
+              <Link to="/TermsAndConditions">Terms & Conditions</Link>
             </li>
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              Policy
+              <Link to="/privacy-policy">Privacy-policy</Link>
             </li>
             <li className="hover:text-red-600 hover:underline  transition-colors duration-300 ease-in-out cursor-pointer">
-              Terms
+              <Link to="/ReturnPolicy">Return-Policy</Link>
             </li>
           </ul>
         </div>
