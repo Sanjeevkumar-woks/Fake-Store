@@ -27,13 +27,13 @@ const CategoryBar = () => {
           className="hover:text-blue-600 transition-colors duration-300 ease-in-out cursor-pointer"
           onClick={() => handleCategory("electronics")}
         >
-          electronics
+          Electronics
         </li>
         <li
           className="hover:text-blue-600 transition-colors duration-300 ease-in-out cursor-pointer"
           onClick={() => handleCategory("jewelery")}
         >
-          jewelery
+          Jewellery
         </li>
         <li
           className="hover:text-blue-600 transition-colors duration-300 ease-in-out cursor-pointer"

@@ -43,14 +43,14 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart flex flex-col gap-4 p-4 w-full">
+    <div className="cart flex flex-col gap-4 p-4 w-full h-screen">
       <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">
         <span className="text-red-500">Cart</span> 🛒 Items
       </h1>
 
       {/* Cart items */}
       {cart.length === 0 ? (
-        <div className="flex flex-col gap-4 justify-center items-center w-full h-full">
+        <div className="flex flex-col gap-4 justify-center items-center w-full h-screen">
           <p className="text-center text-xl sm:text-2xl md:text-4xl font-bold">
             No items in cart 🛒
           </p>
