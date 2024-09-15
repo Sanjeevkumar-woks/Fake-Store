@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../App";
+import { Link } from "react-router-dom";
 
 const CartContainer = ({ isOpen, onClose }) => {
   const { cart, setCart } = useContext(CartContext);
@@ -31,6 +32,11 @@ const CartContainer = ({ isOpen, onClose }) => {
           <button onClick={onClose} className="text-2xl font-bold text-white">
             &times;
           </button>
+          {cart.length > 0 && (
+            <button className="absolute  bottom-0 w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-300">
+              <Link to="/cart">Checkout to cart</Link>
+            </button>
+          )}
         </div>
 
         {/* Cart Items */}

@@ -3,6 +3,7 @@ import { CartContext } from "../App";
 import CategoryBar from "../Components/CategoryBar";
 import ProductsList from "../Components/ProductsList";
 import Loader from "../Components/Loader";
+import Carousel from "../Components/Carousel";
 
 export default function HomePage() {
   const { category } = useContext(CartContext);
@@ -10,6 +11,7 @@ export default function HomePage() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //fetch products
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
@@ -21,6 +23,7 @@ export default function HomePage() {
     fetchProducts();
   }, []);
 
+  //filter products
   useEffect(() => {
     if (category === "All") {
       setFilteredProducts(products);
@@ -37,6 +40,7 @@ export default function HomePage() {
         <Loader />
       ) : (
         <>
+          <Carousel />
           <CategoryBar />
           <ProductsList products={filteredProducts} />
         </>
