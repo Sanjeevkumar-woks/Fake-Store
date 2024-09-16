@@ -2,9 +2,9 @@ import { useState } from "react";
 
 // Carousel images
 const images = [
-  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/grocery-sale-retail-or-e-commerce-banner-ad-design-template-67720435bb809be27f46dfb1dd44c6fa_screen.jpg?ts=1606113265",
-  "https://www.shutterstock.com/image-vector/ecommerce-website-banner-template-presents-260nw-2252124451.jpg",
-  "https://t3.ftcdn.net/jpg/04/65/46/52/360_F_465465254_1pN9MGrA831idD6zIBL7q8rnZZpUCQTy.jpg",
+  "../public/cashback.jpg",
+  "../public/onlineshoppping.webp",
+  "sale.jpg",
 ];
 
 const Carousel = () => {
