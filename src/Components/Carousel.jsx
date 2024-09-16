@@ -1,11 +1,7 @@
 import { useState } from "react";
 
 // Carousel images
-const images = [
-  "../public/cashback.jpg",
-  "../public/onlineshoppping.webp",
-  "../public/sale.jpg",
-];
+const images = ["/cashback.jpg", "/onlineshoppping.webp", "/sale.jpg"];
 
 const Carousel = () => {
   // Carousel state
