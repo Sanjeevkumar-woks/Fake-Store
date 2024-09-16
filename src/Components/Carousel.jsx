@@ -4,7 +4,7 @@ import { useState } from "react";
 const images = [
   "../public/cashback.jpg",
   "../public/onlineshoppping.webp",
-  "sale.jpg",
+  "../public/sale.jpg",
 ];
 
 const Carousel = () => {
